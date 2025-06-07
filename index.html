@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website   </title>
+    <link rel="icon" href="/logo.png/" type="image/png">
+</head>
+<body>
+    <h1>This Is My Website</h1>
+</body>
+</html>
+
+<!-- Tables in Html 
+1) RowSpan:  
+2) ColumnSpan:
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style >table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }</style>
+        
+    <style >   
+        table#1 {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th{
+           text-align: center;
+        }
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        </style>
+        
+</head>
+<body>
+  
+    <table>
+        <thead>
+            <tr>
+                <th>Months</th>
+                <th>Savings</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>January</td>
+                <td>$1000</td>
+            
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>$1200</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <table>
+  <tr>
+    <th>Name</th>
+    <td>Jill</td>
+  </tr>
+  <tr>
+    <th rowspan="2">Phone</th>
+    <td>555-1234</td>
+  </tr>
+  <tr>
+    <td>555-8745</td>
+</tr>
+</table>
+
+<br>
+
+<table id="1">
+    <thead>
+        <tr>
+            <th rowspan="3">Day</th>
+            <th colspan="4">Seminar</th>
+        </tr>
+        <tr>
+            <th colspan="2">Schedule</th>
+            <th rowspan="2">Topic</th>
+        </tr>
+        <tr>
+            <th>Begin</th>
+            <th>End</th>
+        </tr>
+    </thead>
+    <tbody>   
+        <tr>
+            
+            <td rowspan="2">Monday</td>
+            <td rowspan="2">9:00am</td>
+            <td rowspan="2">5:00pm</td>
+            <td rowspan="1">Introduction to XML</td>
+        </tr>
+        <tr>
+            <td>Validity DTD and Relax NG</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Tuesaday</td>
+            <td>9:00am</td>
+            <td>11:00am</td>
+            <td>Xpath</td>
+        </tr>
+        <tr>
+            <td>11:00 am</td>
+            <td>2:00 pm</td>
+            <td rowspan="2">Introduction to XML</td>
+        </tr>
+        <tr>
+            <td>2:00 pm</td>
+            <td>5:00 pm</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>8:00 am</td>
+            <td>12:00 pm</td>
+            <td>XSL Functioning Objects</td>
+        </tr>
+    </tbody> 
+   
+
+</table>
+</body>
+</html>
