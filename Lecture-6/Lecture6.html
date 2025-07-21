@@ -7,17 +7,25 @@
 </head>
 <body>
     <!-- Forms in HTML-->
-     <!--! form  tag: -->
-     <!-- Tags-
-      ^label:
-          -Attributes:
-          *1)for: (it is used to associate label with input element)
+
+<!--*form element:
+     It is used to create/define a form in webpage. Without using form tag, we can create same to same form design but we cannot submit or reset it.
+-->
+
+<!-- Tags-
+    ^label:
+          &Attributes:
+          *1)for: 
+          It is used to associate label with input element, 
+          Input element should have some id which will be used in for attribute of label element for connecting a label with an input.
           
-      ^input:
+    ^input:
           -Attributes:
-           *1)id:
+           *1)id: 
+           It is used to assign some value to an 'input' by which we can set connection between 'label' and 'input' using same "id" value in "for" attribute in Label.
+           
            *2)type: 
-           It is used to specify the type of input.
+           It is used to specify the type/datatype of input.
              ?text: 
              
              ?password:
@@ -30,31 +38,31 @@
              
              ?radio:
              It is used to take radio input from user.
-             We can also develop the method to only one radio button can be selected at a time.
+             We can also develop the method to only one radio button can be selected at a time(Check Form-2).
              
              ?checkbox:
-             It is used to take checkbox input from user.We can select multiple checkboxes at a time.
+             It is used to take checkbox input from user. We can select multiple checkboxes at a time.
             
             
             *3)name:
             It is used to specify the varible name of the input element. 
-            After submitting the form the data will be saved in this variable either in the URL (in case of no backend) or in the backend (in case of backend).
+            After submitting the form, the data will be saved in this variable in the URL (in case of no backend) or in the backend (in case of backend).
             
             *4)value:
             It is used to specify the default value of the input element.
-               
+            It tells what value a particular input will take if the value is not provided by the user. 
                ?default value:
             It is used to specify the default value of the input element.
             
             *5)placeholder:
             It is used to specify a short hint that describes the expected value of the input field.
        
-     ^button:
+    ^button:
            -Attributes:
            *1)type: It is used to specify the type of button.
-             ?reset:  
+              ?reset:  
              It will clear the data without refreshing the page
-            ?submit:
+              ?submit:
              It will submit the data to the server and also refresh the page.
              -->
 
@@ -92,25 +100,24 @@
                 <label for="name">Name</label>
                 <input type="text" id="name"  placeholder="Enter your name"> <br><br>
 
-                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email"> <br><br>
+                 <label for="Age">Email</label> <!--^Email label is connected with input 'Age' using id ="Age" in for attribute of 'Email' Label-->
+                <input type="email" id="Email" placeholder="Enter your email"> <br><br>
 
-                 <label for="age">Age</label> 
-                <input type="number" id="age" placeholder="Enter your age"> <br><br>
+                 <label for="Email">Age</label> <!--^Age label is connected with input 'Email' using id ="Email" in "for" attribute of 'Age' Label-->
+                <input type="number" id="Age" placeholder="Enter your age"> <br><br>
 
-                 <label for="company">Company</label>
-                <input type="text" value="Google" id="company" placeholder="Enter your company"> <br><br>
+                 <label for="Company">Company</label>
+                <input type="text" value="Google" id="Company" placeholder="Enter your company"> <br><br>
 
-                 <label for="">Gender</label>
-                 <!-- Here,we can tick all radio buttons at same time beacuse 
-                we have defined different variables in the form of name attribute (which can take 3 values at a time genderMale,genderFemale and genderOthers) -->
+                 <label for="">Gender</label>  <!-- *Here,we can tick all radio buttons at same time beacuse 
+                *we have defined different variables in the form of name attribute (which can take 3 values at a time genderMale, genderFemale and genderOthers) -->
                 <input type="radio" value="male" name="genderMale"> Male
                 <input type="radio" value="female" name="genderFemale"> Female
                 <input type="radio" value="others" name="genderOthers"> Others <br>
 
                 <label for="">Skills</label>
                 <input type="checkbox" id="skills"  name="skills" placeholder="Enter your skills"> Python
-                <input type="checkbox" id="skills"  name="skills" placeholder="Enter your skills"> JavaScript 
+                <input type="checkbox" id="skills"  name="skills" placeholder="Enter your skills">JavaScript 
                 <input type="checkbox" id="skills"  name="skills" placeholder="Enter your skills">GoLang 
                 <input type="checkbox" id="skills"  name="skills" placeholder="Enter your skills">Rust  <br><br>
             
