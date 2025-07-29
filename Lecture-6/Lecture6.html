@@ -11,8 +11,70 @@
 <!--*form element:
      It is used to create/define a form in webpage. Without using form tag, we can create same to same form design but we cannot submit or reset it.
 -->
+     <!-- &Attributes:
+       *1)action:
+       *2)method:
+            ~Purpose: 
+               Specifies the HTTP method to be used when submitting the form data to the server. 
+               This dictates how the data is packaged and sent.
+            ~Common Values:
+               ?GET:
+                     Form data is appended to the URL as query parameters (e.g., www.example.com/submit?name=Alice&age=30).
+                    
+                    *Visibility: 
+                        Data is visible in the browser's address bar and browser history.
+                    *Limitations: 
+                        Limited by URL length (typically around 2048 characters, but varies).
+                    *Use Case: 
+                        Suitable for non-sensitive data, search queries, or when you want users to be able to bookmark or share the URL with the specific form data. It should ideally be used for requests that retrieve data and are "idempotent" (meaning multiple identical requests have the same effect as a single one, like retrieving data).
+               
+               ?POST:
+                    Form data is sent in the body of the HTTP request.
+                    
+                    *Visibility: 
+                    Data is not visible in the browser's address bar or history.
+                    
+                    *Limitations: 
+                    No practical limit on data size.
+                    
+                    *Use Case: 
+                    Essential for sensitive data (passwords, personal information), file uploads, or when modifying data on the server. It should be used for requests that create, update, or delete data, and are generally not idempotent.
+       
+      *3)autocomplete:
+                   ~Applies to:
+                    The <form> tag (to control autocomplete for the entire form) or individual <input>, <textarea>, and <select> elements (to override the form's setting).
+                   
+                   ~Purpose: 
+                     Specifies whether the browser should provide an autocomplete function for the form or individual form fields. 
+                     This function suggests values based on the user's past input for similar fields, improving user convenience.
+      
+                   ~Common Values for <form>:
+                       *1) on (Default): 
+                          The browser is allowed to automatically complete values for form fields based on the user's previous entries.
 
-<!-- Tags-
+                       *2) off: 
+                          The browser is instructed not to provide autocomplete suggestions for the fields within the form. This is often used for highly sensitive data where even browser-stored history is undesirable (though browsers may sometimes ignore autocomplete="off" for password fields for security/usability).
+                       
+                       *3) Common Values for Individual Fields (more granular control and hints):
+                          Beyond on and off, specific autocomplete tokens (e.g., name, email, tel, street-address, cc-number, current-password, new-password) can be used to provide semantic hints to the browser, allowing it to offer more accurate and relevant suggestions.
+      
+      
+                       *4)novalidate:
+                          ~Applies to: 
+                          The <form> tag.
+
+                          ~Purpose: 
+                          This is a boolean attribute. When present, it instructs the browser to bypass its built-in HTML5 form validation. 
+                          This means that attributes like required, minlength, maxlength, min, max, step, and pattern will not trigger browser-level validation messages or prevent form submission.
+        
+                          ~Ex:
+                          <form action="/submit-data" method="post" novalidate>
+                              <input type="email" name="email" required> <button type="submit">Submit</button>
+                          </form>
+                          
+-->
+<!-- 
+Some Basic Tags-
     ^label:
           &Attributes:
           *1)for: 
@@ -26,22 +88,52 @@
            
            *2)type: 
            It is used to specify the type/datatype of input.
-             ?text: 
+            ?text: 
              
-             ?password:
+            ?password:
              
-             ?email:
+            ?email:
           
-             ?number:
+            ?number:
              
-             ?date:
-             
-             ?radio:
+            ?radio:
              It is used to take radio input from user.
              We can also develop the method to only one radio button can be selected at a time(Check Form-2).
              
-             ?checkbox:
+            ?checkbox:
              It is used to take checkbox input from user. We can select multiple checkboxes at a time.
+            
+            ? tel:
+            
+              ! Not Important 
+            &-------------------------------------------------------------------------------------------------
+            ?date:
+
+            ?time:
+
+            ?local:
+
+            ?date-time local:
+
+            ?week:
+            
+            ?month:
+
+            ?color:
+
+            ?file:
+
+            ?image:
+                 We have to also mention src here.
+            
+            ?search:
+
+            ?range:
+               By default, range will take from value 0 to 100. But we can change it with min and max attributes.
+
+            ? url:
+               
+&---------------------------------------------------------------------------------------------------
             
             
             *3)name:
@@ -56,34 +148,272 @@
             
             *5)placeholder:
             It is used to specify a short hint that describes the expected value of the input field.
-       
+             
+            ! For type="number", "range" or "datetime" types(type="date", type="month", type="week", type="time", type="datetime-local")
+            
+            *6)  step:
+               Purpose: Specifies the legal number intervals for the input field. For example, step="2" for a number input means only even numbers (if the min is even) or odd numbers (if the min is odd) are valid.
+               For date/time inputs, it specifies the increment.
+
+            *7)  min:
+               Purpose: Specifies the minimum value that is allowed for the input field.
+
+            *8)  max:
+               Purpose: Specifies the maximum value that is allowed for the input field.
+
+            ! For type=text or type= anything (we have to check) we have some more attributes
+            *9) minlength:
+               Purpose: Specifies the minimum number of characters a user must enter.
+                  Used with these types: text, email, search, url, tel, password.
+
+            *10) maxlength:
+               Purpose: Specifies the maximum number of characters a user can enter.
+                  Used with these types: text, email, search, url, tel, password.
+
+
+            *11) size:
+               Purpose: Specifies the visual width of the input field in characters. It's a visual hint, not a strict character limit (that's maxlength).
+                  Used with these types: text, email, search, url, tel, password.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            *12) autofocus:
+               ~- Purpose:
+               This is a boolean attribute. When present, it specifies that an HTML form element should automatically get focus when the page loads. 
+               This means the cursor will immediately appear in that input field, ready for the user to type.
+
+               &- Applicable to: It can be used on several form elements: 
+               
+                  <input> (for various types like text, email, number, password, etc.)
+                  <textarea>
+                  <select>
+                  <button>   
+               
+               *Example - 
+               <input type="text" name="username" autofocus>      
+            
+            *13) autocomplete:
+                 - Purpose: Specifies whether the browser should provide an autocomplete function for a form field. This can either be on (browser automatically completes values based on user's past input) or off (browser should not provide autocomplete suggestions). 
+                  More granular control is also available using specific autocomplete tokens.
+                 
+               -   Applicable to 
+                     1) <form> element (to control autocomplete for all fields within the form, unless overridden by individual field settings)
+                     2) <input> (for various types like text, email, number, password, tel, url, search)
+                     3) <textarea>
+                     4) <select>
+
+               -    Values:
+                  Values (Tokens): While on and off are common, the autocomplete attribute also supports a large set of standardized tokens defined by the HTML Living Standard. These tokens provide hints to the browser about the type of data expected in the field, allowing for more intelligent and accurate autocomplete suggestions. Some common examples include:
+
+                        ~off: Explicitly disable autocomplete for that field (can be useful for highly sensitive fields where even browser history is undesirable).
+                        ~on: Allow the browser to decide.
+
+                        name: Full name
+                        honorific-prefix: Mr., Ms., Dr.
+                        given-name: First name                  
+                        family-name: Last name
+                        email: Email address
+                        organization: Company name
+                        street-address: Street address
+                        address-line1, address-line2, address-line3
+                        postal-code
+                        country
+                        tel: Full phone number
+                        cc-name: Name on credit card
+                        cc-number: Credit card number
+                        current-password: For an existing password field (e.g., login form)
+                        new-password: For creating a new password
+                        
+
+            *14) pattern: 
+                  ~Purpose:
+                   Specifies a regular expression that the input field's value must match to be considered valid. If the user's input does not match the specified pattern, the browser will prevent form submission and often display a default validation message.
+
+                  ~Applicable to:
+                  <input type="text">
+                  <input type="search">
+                  <input type="url">
+                  <input type="tel">
+                  <input type="email"> 
+                  (though for email, the browser's built-in validation is usually sufficient, 
+                  and a custom pattern can sometimes make it less robust than the standard.)
+                  <input type="password">
+
+                [ ] for defining range.
+                { } for defining length.
+                    
+                ~ Ex-
+                        <label for="zipcode">Zip Code (e.g., 12345):</label>
+                           <input type="text" id="zipcode" name="zipcode"
+                                  pattern="[0-9]{5}"
+                                  title="Five digit zip code">
+                           
+                        <label for="phone">Phone Number (e.g., XXX-XXX-XXXX):</label>
+                           <input type="tel" id="phone" name="phone"
+                                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                  title="Format: 123-456-7890">
+                           
+                        <label for="productCode">Product Code (3 letters, 4 digits):</label>
+                           <input type="text" id="productCode" name="productCode"
+                                  pattern="[A-Za-z]{3}[0-9]{4}"
+                                  title="Example: ABC1234">
+                           
+            
+            *15) title:  
+               ~Purpose: 
+               Provides advisory information about the element. When applied to an interactive element (like an input field, button, or link), 
+               this information typically appears as a tooltip when the user hovers their mouse pointer over the element. For non-interactive elements, 
+               it can provide additional context that might be useful for accessibility tools or for understanding the page's structure.
+            
+               ~Applicable to: 
+               Nearly all HTML elements, including:
+               <input> (any type: text, number, email, password, checkbox, radio, submit, etc.)
+               <textarea>
+               <select>
+               <button>
+               <a> (links)
+               <img>
+               <div>, <span>, <p>, <h1> to <h6>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+   ^textarea:
+         Input tag is for single line input,but text area is used for multi line input.
+         &Attributes:
+         *1) name:
+         *2) id:
+         *3) rows:
+         *4) cols:
+
     ^button:
            -Attributes:
            *1)type: It is used to specify the type of button.
+                 By default ,type of button is Submit.
               ?reset:  
              It will clear the data without refreshing the page
               ?submit:
              It will submit the data to the server and also refresh the page.
-             -->
+    
+& Note :
+   ^ readonly:       
+   ^ disabled:       
+   ^ required: 
+    
+
+Dropdown Creation
+^1) Select tag:
+     *i) label: 
+     *ii) select tag:
+     *iii) option:
+     *iv) optgroup:
+         
+^2) Datalist tag:
+
+Some Useful Tags
+^1) fieldset tag:
+^2) legend tag:
+
+&Shortcut for multi-line identation: Ctrl+ alt+ upperarrow/lowerarrow
+                -->
+             
+             
+<label for="username">Username:</label>
+<input type="text" id="username" name="username"
+       title="Please enter your unique username (e.g., john_doe123)" autocomplete="on">
+<br>
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" min="18" max="99"
+       title="Enter your age between 18 and 99">
+<br>
+<button type="submit" title="Click to submit the form">Submit</button>
+<br>
 
     <h1>Form Example-1</h1>
              <form >
+               <fieldset>
+                  <legend><h3>Personal Information Form</h3></legend>
                 <label for="name">Name</label>
-                <input type="text" id="name"  placeholder="Enter your name"> <br><br>
+                <input type="text" id="name"  placeholder="Enter your name" title="Enter your name" required> <br><br>
 
                  <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email"> <br><br>
+                <input type="email" id="email" placeholder="Enter your email" title="Enter the email"  required> <br><br>
 
                  <label for="age">Age</label> 
-                <input type="number" id="age" placeholder="Enter your age"> <br><br>
+                <input type="number" id="age" placeholder="Enter your age"  required > <br><br>
 
                  <label for="company">Company</label>
-                <input type="text" value="Google" id="company" placeholder="Enter your company"> <br><br>
+                <input type="text" value="Google" id="company" placeholder="Enter your company"  > <br><br>
 
                  <label for="">Gender</label>
                 <input type="radio" value="male" name="gender"> Male
                 <input type="radio" value="female" name="gender"> Female
                 <input type="radio" value="others" name="gender"> Others <br>
+               </fieldset>
+                <br>
+
+<!--
+! Dropdown Creation:
+^1) Select tag:
+     *i) label:
+     *ii) select tag:
+     *iii) option:
+     *iv) optgroup:
+         
+^2) Datalist tag:
+                -->
+
+               <!-- &DropDown-1 -->
+      <fieldset>
+            <legend>Educational details: </legend>
+
+               <label for="">Choose your Skills: </label>
+               <select name="dropDownSkills" id="">
+                  <optgroup label="Frontend">
+                     <option >Html</option>
+                     <option >CSS</option>
+                     <option >JavaScript</option>
+                     <option >React JS</option>
+                     <option value="tailwindCSS">Tailwind CSS</option>
+                  </optgroup> 
+                <!-- If we don't specify any value attribute, by default it will consider content as a value. -->
+                   <optgroup label="Database">
+                     <option >SQL</option> <!-- ^If we don't specify any value attribute, by default it will consider content as a value. -->
+                     <option >MongoDB</option>
+                     <option >Redis</option>
+                     <option >Maria db</option>
+                     <option value="firebase">firebase</option>
+                  </optgroup>
+                  
+                   <optgroup label="Backend">
+                     <option >Python</option> <!-- ^If we don't specify any value attribute, by default it will consider content as a value. -->
+                     <option >Node JS</option>
+                     <option >Nest JS</option>
+                     <option >Java</option>
+                     <option value="GoLang">GoLang</option>
+                  </optgroup>
+                  
+               </select>
+<br><br>
+               <!-- &Dropdown-2 -->
+               <label for="">Skills: </label>
+               <input list="requiredSkills" placeholder="Choose your Skills">
+               <datalist id="requiredSkills">
+                     <option >Html</option>
+                     <option >CSS</option>
+                     <option >JavaScript</option>
+                     <option >React JS</option>
+                     <option value="tailwindCSS">Tailwind CSS</option>
+                     <option >SQL</option> <!-- ^If we don't specify any value attribute, by default it will consider content as a value. -->
+                     <option >MongoDB</option>
+                     <option >Redis</option>
+                     <option >Maria db</option>
+                     <option value="firebase">firebase</option>
+                      <option >Python</option> <!-- ^If we don't specify any value attribute, by default it will consider content as a value. -->
+                     <option >Node JS</option>
+                     <option >Nest JS</option>
+                     <option >Java</option>
+                     <option value="GoLang">GoLang</option>
+               </datalist>
+<br><br>
 
                 <label for="">Skills</label>
                 <input type="checkbox" id="skills"  name="skills" placeholder="Enter your skills"> Python
@@ -91,8 +421,18 @@
                 <input type="checkbox" id="skills"  name="skills" placeholder="Enter your skills">GoLang 
                 <input type="checkbox" id="skills"  name="skills" placeholder="Enter your skills">Rust  <br><br>
             
-               <button type="reset">Reset</button>
-               <button type="submit">Submit</button>
+               
+            </fieldset>
+
+            <fieldset>
+                  <legend><h2>Feedback section</h2></legend>
+                  <label for="Feedback">Enter any Feedback: </label>
+                  <textarea name="feedback" id="Feedback" rows="5" cols="10"></textarea>
+                   <br><br>
+                  <button type="reset">Reset</button>
+                  <button type="submit">Submit</button>
+
+            </fieldset>
             </form>
 
     <h1>Form Example-2</h1>
@@ -126,3 +466,31 @@
             </form>
 </body>
 </html>
+
+<h1>Form-3</h1>
+<form >
+   <fieldset>
+      <legend>
+         <h3>Values of Type Attributes</h3>
+      </legend>
+<!-- Here we don't want to link input and label therefore we need not to write label,we can write label directly. -->
+      text: <input type="text"> <br> <br>
+      email: <input type="email"><br><br>
+      password: <input type="password"> <br> <br>
+      date: <input type="date"> <br> <br>
+      time: <input type="time"> <br><br>
+      date-time-local: <input type="datetime-local"> <br> <br>
+      week: <input type="week"> <br><br>
+      month: <input type="month"> <br><br>
+      color: <input type="color"> <br><br>
+      file: <input type="file"><br><br>
+      image: <input type="image" src="" alt="" height="100 px"> <br><br>
+      image: <input type="hidden"> <br> <br>
+      search: <input type="search"> <br><br>
+      range: <input type="range"> <br><br>
+      <!-- *By default range will take values from 0 to 100,but we can change it from min and max attributes. -->
+      range: <input type="range" min="0" max="10"> <br><br>
+      url : <input type="url"> <br> <br>
+      
+   </fieldset>
+</form>
