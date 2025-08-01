@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        #blue{
+            background-color: rgb(105, 105, 214);
+        }
+        #salmon{
+            background-color:salmon;
+        }
+        #green{
+            background-color: greenyellow;
+        }
+        #pink{
+            background-color: pink;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #darkpink{
+            background-color: rgb(234, 40, 72);
+        }
+        #red{
+            background-color: red;
+        }
+    </Style>
+</head>
+<body>
+    
+    <h1>Table-1</h1>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <td>Model</td>
+            <td>Os</td>
+            <td>Display</td>
+            <td>RAM</td>
+        </tr>
+        <tr>
+            <td>Samsung Galaxy <br>S7 <br></td>
+            <td rowspan="2">Android</td>
+            <td>5.1"</td>
+            <td>4GB</td>
+        </tr>
+        <tr>
+            <td>Sony Xperia Z5</td>
+            <td>4.6"</td>
+            <td rowspan="2">2 GB</td>
+        </tr>
+        <tr>
+            <td>Apple iPhone 6s</td>
+            <td>iOS</td>
+            <td>4.7"</td>
+        </tr>
+    </table>
+
+    <h2>Table-2</h2>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th rowspan="2" colspan="2">Student</th>
+            <th colspan="4">Exam</th>
+            <th colspan="4"> 2nd Exam</th>
+            <th rowspan="2" colspan="2">Final Grade</th>
+        </tr>
+        <tr>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+            <th rowspan="2">Grade</th>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+            <th rowspan="2">Grade</th>
+            
+        </tr>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <td>8</td>
+            <td>7</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <th>NR</th>
+            <th>R</th>
+        </tr>
+        <tr>
+            <td>80549061</td>
+            <td>John</td>
+            <td>70%</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>17.6</td>
+            <td colspan="4"></td>
+            <td>17.6</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>80549062</td>
+            <td>Mary</td>
+            <td>10%</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>17.6</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>50%</td>
+            <td>16.5</td>
+            <td>16.5</td>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td>80549063</td>
+            <td>Claire</td>
+            <td colspan="4"></td>
+            <td>50%</td>
+            <td>50%</td>
+            <td>50%</td>
+            <td>10.0</td>
+            <td>10.0</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    <h1>Table-3</h1>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>Level1</th>
+            <th>Level2</th>
+            <th>Level3</th>
+            <th>Info</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td rowspan="6">System</td>
+            <td rowspan="4">System Apps</td>
+            <td rowspan="3">System Env</td>
+            <td>App Test</td>
+            <td>foo</td>
+        </tr>
+        <tr>
+            <td>App Memory</td>
+            <td>foo</td>
+        </tr>
+        <tr>
+            <td>App Test</td>
+            <td>bar</td>
+        </tr>
+        <tr>
+            <td>SystemEnv2</td>
+            <td>App Test</td>
+            <td>bar</td>
+        </tr>
+        <tr>
+            <td rowspan="2">System Memory</td>
+            <td rowspan="2"> Memory Test</td>
+            <td>Memory Func</td>
+            <td>foo</td>
+        </tr>
+        <tr>
+            <td>App Test</td>
+            <td>foo</td>
+        </tr>
+
+    </table>
+
+    <h1>Table-4:Periodic Table </h1>
+    <table border="0" cellspacing="1" cellpadding="10">
+        <tr>
+            <td id="yellow" >H</td>
+            <td colspan="16" ></td>
+            <td id="pink">He</td>
+        </tr>
+        <tr>
+            <td id="blue">Li</td>
+            <td id="salmon">Be</td>
+            <td colspan="10"></td>
+            <td id="darkpink">B</td>
+            <td id="yellow">C</td>
+            <td id="yellow">N</td>
+            <td id="yellow">O</td>
+            <td style="background-color: red;">F</td>
+            <td id="pink">Ne</td>
+        </tr>
+        <tr>
+            <td id="blue">Na</td>
+            <td id="salmon">Mg</td>
+             <td colspan="10"></td>
+             <td id="pink">Al</td>
+             <td id="yellow">Si</td>
+             <td id="yellow">P</td>
+             <td id="yellow">S</td>
+             <td style="background-color: red;">Cl</td>
+             <td id="pink">Ar</td>
+        </tr>
+        <tr>
+            <td id="blue">K</td>
+            <td id="salmon">Ca</td>
+            <td id="green">Sc</td>
+            <td id="green">Ti</td>
+            <td id="green">V</td>
+            <td id="green">Cr</td>
+            <td id="green">Mn</td>
+            <td id="green">Fe</td>
+            <td id="green">Co</td>
+            <td id="green">Ni</td>
+            <td id="green">Cu</td>
+            <td id="green">Zn</td>
+             <td id="pink">Ga</td>
+             <td id="darkpink">Ge</td>
+             <td id="darkpink">As</td>
+             <td id="yellow">Se</td>
+             <td id="red">Br</td>
+             <td id="pink">Kr</td>
+        </tr>
+        <tr>
+            <td id="blue">Rb</td>
+            <td id="salmon">Sr</td>
+            <td id="green">Y</td>
+            <td id="green">Zr</td>
+            <td id="green">Nb</td>
+            <td id="green">Mo</td>
+            <td id="green">Tc</td>
+            <td id="green">Ru</td>
+            <td id="green">Rh</td>
+            <td id="green">Pd</td>
+            <td id="green">Ag</td>
+            <td id="green">Cd</td>
+            <td id="pink">In</td>
+            <td id="pink">Sn</td>
+            <td id="darkpink">Sb</td>
+            <td id="darkpink">Te</td>
+            <td id="red">I</td>
+            <td id="pink">Xe</td>
+        </tr>
+        <tr>
+            <td id="blue">Cs</td>
+            <td id="salmon">Ba</td>
+            <td style="background-color: rgb(122, 240, 122);"></td>
+            <td id="green">Hf</td>
+            <td id="green">Ta</td>
+            <td id="green">W</td>
+            <td id="green">Re</td>
+            <td id="green">Os</td>
+            <td id="green">Ir</td>
+            <td id="green">Pt</td>
+            <td id="green">Au</td>
+            <td id="green">Hg</td>
+            <td id="pink">TI</td>
+            <td id="pink">Pb</td>
+            <td id="pink">Bi</td>
+            <td id="darkpink">Po</td>
+            <td id="red">At</td>
+            <td id="pink">Rn</td>
+        </tr>
+        <tr>
+            <td id="blue">Fr</td>
+            <td id="salmon">Ra</td>
+            <td style="background-color: rgb(83, 83, 240);"></td>
+            <td id="green">Rf</td>
+            <td id="green">Db</td>
+            <td id="green">Sg</td>
+            <td id="green">Bh</td>
+            <td id="green">Hs</td>
+            <td id="green">Mt</td>
+            <td id="green">Ds</td>
+            <td id="green">Rg</td>
+            <td id="green">Cn</td>
+            <td id="pink">Uut</td>
+            <td id="pink">Fi</td>
+            <td id="red">Uup</td>
+            <td id="pink">Lv</td>
+            <td id="blue">Uus</td>
+            <td id="salmon">Uuo</td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td id="green">La</td>
+            <td id="green">Ce</td>
+            <td id="green">Pr</td>
+            <td id="green">Nd</td>
+            <td id="green">Pm</td>
+            <td id="green">Sm</td>
+            <td id="green">Eu</td>
+            <td id="green">Gd</td>
+            <td id="green">Tb</td>
+            <td id="green">Dy</td>
+            <td id="green">Ho</td>
+            <td id="green">Er</td>
+            <td id="green">Tm</td>
+            <td id="green">Yb</td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td id="blue">Ac</td>
+            <td id="blue">Tb</td>
+            <td id="blue">Pa</td>
+            <td id="blue">U</td>
+            <td id="blue">Np</td>
+            <td id="blue">Pu</td>
+            <td id="blue">Am</td>
+            <td id="blue">Cm</td>
+            <td id="blue">Bk</td>
+            <td id="blue">Cf</td>
+            <td id="blue">Es</td>
+            <td id="blue">Fm</td>
+            <td id="blue">Md</td>
+            <td id="blue">No</td>
+        </tr>
+    </table>
+
+</body>
+</html>

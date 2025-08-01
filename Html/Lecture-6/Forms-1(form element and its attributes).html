@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--*form element:
+     It is used to create/define a form in webpage. Without using form tag, we can create same to same form design but we cannot submit or reset it.
+-->
+     <!-- &Attributes:
+       *1)action:
+       *2)method:
+            ~Purpose: 
+               Specifies the HTTP method to be used when submitting the form data to the server. 
+               This dictates how the data is packaged and sent.
+            ~Common Values:
+               ?GET:
+                     Form data is appended to the URL as query parameters (e.g., www.example.com/submit?name=Alice&age=30).
+                    
+                    *Visibility: 
+                        Data is visible in the browser's address bar and browser history.
+                    *Limitations: 
+                        Limited by URL length (typically around 2048 characters, but varies).
+                    *Use Case: 
+                        Suitable for non-sensitive data, search queries, or when you want users to be able to bookmark or share the URL with the specific form data. It should ideally be used for requests that retrieve data and are "idempotent" (meaning multiple identical requests have the same effect as a single one, like retrieving data).
+               
+               ?POST:
+                    Form data is sent in the body of the HTTP request.
+                    
+                    *Visibility: 
+                    Data is not visible in the browser's address bar or history.
+                    
+                    *Limitations: 
+                    No practical limit on data size.
+                    
+                    *Use Case: 
+                    Essential for sensitive data (passwords, personal information), file uploads, or when modifying data on the server. It should be used for requests that create, update, or delete data, and are generally not idempotent.
+       
+      *3)autocomplete:
+                   ~Applies to:
+                    The <form> tag (to control autocomplete for the entire form) or individual <input>, <textarea>, and <select> elements (to override the form's setting).
+                   
+                   ~Purpose: 
+                     Specifies whether the browser should provide an autocomplete function for the form or individual form fields. 
+                     This function suggests values based on the user's past input for similar fields, improving user convenience.
+      
+                   ~Common Values for <form>:
+                       *1) on (Default): 
+                          The browser is allowed to automatically complete values for form fields based on the user's previous entries.
+
+                       *2) off: 
+                          The browser is instructed not to provide autocomplete suggestions for the fields within the form. This is often used for highly sensitive data where even browser-stored history is undesirable (though browsers may sometimes ignore autocomplete="off" for password fields for security/usability).
+                       
+                       *3) Common Values for Individual Fields (more granular control and hints):
+                          Beyond on and off, specific autocomplete tokens (e.g., name, email, tel, street-address, cc-number, current-password, new-password) can be used to provide semantic hints to the browser, allowing it to offer more accurate and relevant suggestions.
+      
+      
+                       *4)novalidate:
+                          ~Applies to: 
+                          The <form> tag.
+
+                          ~Purpose: 
+                          This is a boolean attribute. When present, it instructs the browser to bypass its built-in HTML5 form validation. 
+                          This means that attributes like required, minlength, maxlength, min, max, step, and pattern will not trigger browser-level validation messages or prevent form submission.
+        
+                          ~Ex:
+                          <form action="/submit-data" method="post" novalidate>
+                              <input type="email" name="email" required> <button type="submit">Submit</button>
+                          </form>
+                          
+-->
+</body>
+</html>
+
+
+
+
